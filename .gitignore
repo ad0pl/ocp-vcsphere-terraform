@@ -29,3 +29,10 @@ override.tf.json
 # example: *tfplan*
 
 .vs/
+
+# Openshift files
+install_dir/*.ign
+install_dir/*.json
+install_dir/.openshift_install*
+install_dir/install-config.yaml-bak
+install_dir/auth/*
