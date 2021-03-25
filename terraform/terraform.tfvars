@@ -23,8 +23,8 @@ bootstrap_num_cpu     = 4
 bootstrap_mem         = 16384
 control_plane_num_cpu = 4
 control_plane_mem     = 16384
-compute_plane_num_cpu = 4
-compute_plane_mem     = 16384
+compute_num_cpu       = 4
+compute_mem           = 16384
 
 bootstrap_ignition_path     = "../install_dir/bootstrap.ign"
 control_plane_ignition_path = "../install_dir/master.ign"
