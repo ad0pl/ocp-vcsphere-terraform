@@ -1,6 +1,6 @@
 base_domain    = "okd.local"
 cluster_id     = "lab"
-cluster_domain = "${cluster_id}.${base_domain}"
+cluster_domain = "lab.okd.local" # "${cluster_id}.${base_domain}"
 
 // vSphere information
 vsphere_server =

@@ -5,7 +5,7 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 
-local {
+locals {
     cluster_prefix             = "okd4"
     bootstrap_fqdns            = ["${cluster_prefix}-bootstrap.${var.cluster_domain}"]
     control_plane_fqdns        = [for idx in range(var.control_plane_count) : "${cluster_prefix}-control-plane-${idx}.${var.cluster_domain}"]
