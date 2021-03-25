@@ -60,7 +60,7 @@ variable "machine_cidr" {
 //
 variable "control_plane_count" {
 	type = string
-	default = "3""
+	default = "3"
 }
 variable "compute_count" {
   type = string
