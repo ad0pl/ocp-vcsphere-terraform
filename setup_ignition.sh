@@ -1,5 +1,14 @@
 #!/bin/bash
 
+if [ ! -d ./install_dir -a -f ./install_dir/install-config.yaml ]; then
+	echo "Installation directory or install-config.yaml doesn't exist"
+fi
+
+if [ ! -f ./install_dir/install-config.yaml-bak ]; then
+	echo "Creating a copy of the install file"
+	cp ./install_dir/install-config.yaml ./install_dir/install-config.yaml-bak
+fi
+
 echo "Creating Manifests"
 openshift-install create manifests --dir=install_dir/
 
