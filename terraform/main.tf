@@ -6,10 +6,9 @@ provider "vsphere" {
 }
 
 locals {
-    cluster_prefix             = "okd4"
-    bootstrap_fqdns            = ["${cluster_prefix}-bootstrap.${var.cluster_domain}"]
-    control_plane_fqdns        = [for idx in range(var.control_plane_count) : "${cluster_prefix}-control-plane-${idx}.${var.cluster_domain}"]
-    compute_fqdns              = [for idx in range(var.compute_count) : "${cluster_prefix}-compute-${idx}.${var.cluster_domain}"]
+    bootstrap_fqdns            = ["${var.cluster_vm_prefix}-bootstrap.${var.cluster_domain}"]
+    control_plane_fqdns        = [for idx in range(var.control_plane_count) : "${var.cluster_vm_prefix}-control-plane-${idx}.${var.cluster_domain}"]
+    compute_fqdns              = [for idx in range(var.compute_count) : "${var.cluster_vm_prefix}-compute-${idx}.${var.cluster_domain}"]
     bootstrap_ip_address       = [var.bootstrap_ip_address]
     control_plane_ip_addresses = var.control_plane_ip_addresses
     compute_ip_addresses       = var.compute_ip_addresses

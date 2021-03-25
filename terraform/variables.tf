@@ -6,17 +6,29 @@ variable "vsphere_server" {
   type = string
   default = ""
 }
+variable "vsphere_datacenter" {
+	type = string
+	default = "ha-datacenter"
+}
 variable "vsphere_user" {
   type = string
   default = ""
 }
-variable "cluster_prefix" {
+variable "cluster_vm_prefix" {
   type = string
   default = ""
 }
 variable "cluster_domain" {
   type = string
   default = ""
+}
+variable "base_domain" {
+	type = string
+	default = ""
+}
+variable "vm_network" {
+	type = string
+	default "VM Network"
 }
 variable "compute_count" {
   type = string
@@ -52,7 +64,7 @@ variable "bootstrap_num_cpu" {
 }
 variable "compute_ip_addresses" {
   type = list(string)
-  default = ""
+  default = [""]
 }
 variable "compute_mem" {
   type = string
@@ -64,7 +76,7 @@ variable "compute_num_cpu" {
 }
 variable "control_plane_ip_addresses" {
   type = list(string)
-  default = ""
+  default = [""]
 }
 variable "control_plane_mem" {
   type = string
@@ -80,5 +92,10 @@ variable "machine_cidr" {
 }
 variable "vm_dns_addresses" {
   type = list(string)
-  default = ""
+  default = [""]
+}
+
+variable "ssh_public_key_path" {
+	type = string
+	default = "${HOME}/.ssh/id_rsa.pub"
 }
