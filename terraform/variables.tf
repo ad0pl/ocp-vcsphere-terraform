@@ -50,12 +50,8 @@ variable "bootstrap_num_cpu" {
   type = string
   default = ""
 }
-variable "cluster_domain" {
-  type = string
-  default = ""
-}
 variable "compute_ip_addresses" {
-  type = string
+  type = list(string)
   default = ""
 }
 variable "compute_mem" {
@@ -67,7 +63,7 @@ variable "compute_num_cpu" {
   default = ""
 }
 variable "control_plane_ip_addresses" {
-  type = string
+  type = list(string)
   default = ""
 }
 variable "control_plane_mem" {
@@ -83,6 +79,6 @@ variable "machine_cidr" {
   default = ""
 }
 variable "vm_dns_addresses" {
-  type = string
+  type = list(string)
   default = ""
 }
