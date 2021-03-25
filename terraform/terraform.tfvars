@@ -25,9 +25,9 @@ control_plane_mem     = 16384
 compute_plane_num_cpu = 4
 compute_plane_mem     = 16384
 
-bootstrap_ignition_path     = "./bootstrap.ign"
-control_plane_ignition_path = "./master.ign"
-compute_ignition_path       = "./worker.ign"
+bootstrap_ignition_path     = "../install_dir/bootstrap.ign"
+control_plane_ignition_path = "../install_dir/master.ign"
+compute_ignition_path       = "../install_dir/worker.ign"
 
 //
 // Static Addressing
@@ -39,4 +39,4 @@ compute_ip_addresses       = ["192.168.1.204", "192.168.1.205"]
 vm_dns_addresses = ["192.168.1.210"]
 
 // SSH Key
-ssh_public_key_path = "/home/bugge/src/ocp/installer/upi/vsphere/okd_sshkeys.pub"
+ssh_public_key_path = "../install_dir/okd_sshkeys.pub"
